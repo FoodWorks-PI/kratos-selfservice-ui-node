@@ -47,7 +47,7 @@ jobs:
             MINOR=${VERSION%.*}
             MAJOR=${MINOR%.*}
             TAGS="$TAGS,${DOCKER_IMAGE}:${MINOR},${DOCKER_IMAGE}:${MAJOR},${DOCKER_IMAGE}:latest"
-          elif if [[ $VERSION == *alpha* ]];
+          elif [[ $VERSION == *alpha* ]];
             TAGS="$TAGS,${DOCKER_IMAGE}:alpha"
           fi
           echo ::set-output name=docker_image::${DOCKER_IMAGE}
