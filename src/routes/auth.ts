@@ -20,12 +20,13 @@ export const authHandler = (type: 'login' | 'registration') => (
   next: NextFunction
 ) => {
   const request = req.query.request
+  const redirect=`return_to=${req.query.clientApp}`
 
   // The request is used to identify the login and registration request and
   // return data like the csrf_token and so on.
   if (!request) {
     console.log('No request found in URL, initializing auth flow.')
-    res.redirect(`${config.kratos.browser}/self-service/browser/flows/${type}`)
+    res.redirect(`${config.kratos.browser}/self-service/browser/flows/${type}?${redirect}`)
     return
   }
 
@@ -41,7 +42,7 @@ export const authHandler = (type: 'login' | 'registration') => (
     .then(({body, response}) => {
       if (response.statusCode == 404 || response.statusCode == 410 || response.statusCode == 403) {
         res.redirect(
-          `${config.kratos.browser}/self-service/browser/flows/${type}`
+          `${config.kratos.browser}/self-service/browser/flows/${type}?${redirect}`
         )
         return
       } else if (response.statusCode != 200) {
@@ -52,7 +53,7 @@ export const authHandler = (type: 'login' | 'registration') => (
     })
     .then((request?: LoginRequest | RegistrationRequest) => {
       if (!request) {
-        res.redirect(`${config.kratos.browser}/self-service/browser/flows/${type}`)
+        res.redirect(`${config.kratos.browser}/self-service/browser/flows/${type}?${redirect}`)
         return
       }
 

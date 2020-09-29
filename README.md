@@ -17,6 +17,9 @@ Additionally:
 
 - Dashboard (requires login)
 
+## About this fork
+This fork uses an optional `clientApp` query parameter, to modify the redirection behavior upon succesful auth actions. Note that this url must be whitelisted by kratos.
+
 ## Configuration
 
 This application can be configured using two environment variables:
