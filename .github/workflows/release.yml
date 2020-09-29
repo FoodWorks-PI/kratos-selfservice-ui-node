@@ -33,10 +33,11 @@ jobs:
       - name: Prepare
         id: prep
         run: |
-          # IMAGE_ID=ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME
+          IMAGE_ID=ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME
           # Change all uppercase to lowercase
-          # IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
-          DOCKER_IMAGE=foodworks/kratos-selfservice-ui-node
+          IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
+          # DOCKER_IMAGE=foodworks/kratos-selfservice-ui-node
+          DOCKER_IMAGE=$IMAGE_ID
           VERSION=noop
           if [[ $GITHUB_REF == refs/tags/* ]]; then
             VERSION=${GITHUB_REF#refs/tags/v}
