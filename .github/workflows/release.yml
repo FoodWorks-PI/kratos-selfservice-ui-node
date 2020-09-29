@@ -50,7 +50,6 @@ jobs:
           elif if [[ $VERSION == *alpha* ]];
             TAGS="$TAGS,${DOCKER_IMAGE}:alpha"
           fi
-          fi
           echo ::set-output name=docker_image::${DOCKER_IMAGE}
           echo ::set-output name=version::${VERSION}
           echo ::set-output name=tags::${TAGS}
