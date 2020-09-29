@@ -43,7 +43,7 @@ const protectProxy = (req: Request, res: Response, next: NextFunction) => {
       next()
     })
     .catch(() => {
-      res.redirect(config.baseUrl + '/auth/login')
+      res.redirect(config.baseUrl + '/login')
     })
 }
 
@@ -87,14 +87,14 @@ if (process.env.NODE_ENV === 'stub') {
   // Setting NODE_ENV to "only-ui" disables all integration and only shows the UI. Useful
   // when working on CSS or HTML things.
   app.get('/', dashboard)
-  app.get('/auth/registration', (_: Request, res: Response) => {
+  app.get('/registration', (_: Request, res: Response) => {
     const config = stubs.registration.methods.password.config
     res.render('registration', {
       password: stubs.registration.methods.password.config,
       oidc: stubs.registration.methods.oidc.config,
     })
   })
-  app.get('/auth/login', (_: Request, res: Response) => {
+  app.get('/login', (_: Request, res: Response) => {
     const config = stubs.login.methods.password.config
     res.render('login', {
       password: stubs.login.methods.password.config,
@@ -108,8 +108,8 @@ if (process.env.NODE_ENV === 'stub') {
 } else {
   app.get('/', protect, dashboard)
   app.get('/dashboard', protect, dashboard)
-  app.get('/auth/registration', authHandler('registration'))
-  app.get('/auth/login', authHandler('login'))
+  app.get('/registration', authHandler('registration'))
+  app.get('/login', authHandler('login'))
   app.get('/error', errorHandler)
   app.get('/settings', protect, settingsHandler)
   app.get('/verify', verifyHandler)
