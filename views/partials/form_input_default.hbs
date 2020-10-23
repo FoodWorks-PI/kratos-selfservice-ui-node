@@ -1,7 +1,9 @@
-<fieldset>
-    <label>
-        <input name="{{name}}" type="{{type}}" value="{{value}}" placeholder="{{getTitle name}}" {{#if disabled}}disabled{{/if}}>
-        <span>{{getTitle name}}</span>
-    </label>
-    {{> messages }}
-</fieldset>
+<div class="input-container">
+    <span>{{getTitle name}}</span>
+    <fieldset>
+        <label>
+            <input name="{{name}}" type="{{type}}" value="{{value}}" placeholder="{{getTitle name}}" {{#if disabled}}disabled{{/if}}>
+        </label>
+        {{> messages }}
+    </fieldset>
+</div>

@@ -1,33 +1,52 @@
 .auth {
-    min-height: 100vh;
-    color: var(--primary-light);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.auth .subheading {
-    margin-bottom: 1.5rem;
-    text-align: center;
-    color: var(--base-text);
+.facebook-login-button {
+  background: none;
+  background-color: #1877f2;
+  color: #fff;
+  line-height: 1;
+  border: none;
+  border-radius: 8;
+  display: flex;
+  align-items: center;
+  padding: 8;
+  width: 70%;
+  align-self: center;
+}
+
+.auth h2 {
+  text-align: center;
+  color: var(--primary-main);
+  margin-bottom: 10px;
+  width: 100vw;
+}
+.auth h5 {
+  text-align: center;
+  color: var(--primary-main);
+  font-weight: 700;
+  margin-bottom: 15px;
+  width: 70vw;
+}
+
+.auth img {
+  max-width: 150px;
+  margin: 10px 0 10px 0;
 }
 
 .auth a {
-    color: var(--base-text);
-    transition: color 0.1s ease-in-out;
-}
-
-.auth a:hover {
-    color: var(--base-white);
-}
-
-.auth .divider {
-    width: 100%;
-    border-color: var(--base-main);
-    margin: 2rem 0;
+  color: var(--secondary-main);
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 .auth .alternative-actions {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: center;
 }
