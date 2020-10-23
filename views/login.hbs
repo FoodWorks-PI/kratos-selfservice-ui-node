@@ -1,8 +1,9 @@
 <div class="auth">
     <div class="container">
-        {{> icon_logo}}
-        <h5 class="subheading">Welcome to this example login screen!</h5>
-
+         <h2>FOOD WORKS</h2>
+	        <img src="{{pathPrefix}}/img/logo/logo.svg" alt="Food Wrks Logo">
+	        <h5>¡Salva comida ya y combate el desperdicio!</h5>
+ 
         {{> messages messages=messages className="global"}}
 
         {{#if password}}
@@ -21,8 +22,8 @@
 
         <div class="alternative-actions">
             <!-- <a href="auth/registration">Recover password</a> -->
-            <a href="{{pathPrefix}}registration">Register new account</a>
-            <a href="{{pathPrefix}}recovery">Reset password</a>
+            <a href="{{pathPrefix}}registration">Nueva cuenta</a>
+            <a href="{{pathPrefix}}recovery">Olvide mi contraseña</a>
         </div>
     </div>
 </div>
