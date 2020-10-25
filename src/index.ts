@@ -83,7 +83,7 @@ app.engine(
   })
 )
 
-if (process.env.NODE_ENV === 'stub') {
+if (process.env.NODE_ENV === 'only-ui') {
   // Setting NODE_ENV to "only-ui" disables all integration and only shows the UI. Useful
   // when working on CSS or HTML things.
   app.get('/', dashboard)
