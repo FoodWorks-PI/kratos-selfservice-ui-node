@@ -1,29 +1,32 @@
 <div class="auth">
-    <div class="container">
-         <h2>FOOD WORKS</h2>
-	        <img src="{{pathPrefix}}/img/logo/logo.svg" alt="Food Wrks Logo">
-	        <h5>¡Salva comida ya y combate el desperdicio!</h5>
+    
+    <h2>FOOD WORKS</h2>
+	<img src="{{pathPrefix}}img/logo.svg" alt="Food Wrks Logo">
+	<h5>¡Salva comida ya y combate el desperdicio!</h5>
  
-        {{> messages messages=messages className="global"}}
+    {{> messages messages=messages className="global"}}
 
-        {{#if password}}
-            <div id="login-password">
-                {{> form submitLabel="Sign in" form=password}}
-            </div>
-        {{/if}}
-
-        {{#if oidc}}
-            <div id="login-oidc">
-                {{> form form=oidc}}
-            </div>
-        {{/if}}
-
-        <hr class="divider">
-
-        <div class="alternative-actions">
-            <!-- <a href="auth/registration">Recover password</a> -->
-            <a href="{{pathPrefix}}registration">Nueva cuenta</a>
-            <a href="{{pathPrefix}}recovery">Olvide mi contraseña</a>
+    {{#if password}}
+        <div id="login-password">
+             {{> form submitLabel="Sign in" form=password}}
         </div>
+    {{/if}}
+
+    {{#if oidc}}
+        <div id="login-oidc">
+            {{> form form=oidc}}
+        </div>
+    {{/if}}
+
+    <hr class="divider">
+
+    <div class="alternative-actions">
+         <!-- <a href="auth/registration">Recover password</a> -->
+        <a href="{{pathPrefix}}registration">Nueva cuenta</a>
+    </div>
+
+    <hr class="divider">
+    <div class="alternative-actions">
+        <a href="{{pathPrefix}}recovery">Olvide mi contraseña</a>
     </div>
 </div>
