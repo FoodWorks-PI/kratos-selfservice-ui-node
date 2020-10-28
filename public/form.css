@@ -2,6 +2,10 @@
   width: 100%;
 }
 
+#login-password {
+  width: 100%;
+}
+
 form {
   line-height: 1.15;
   font-weight: normal;
@@ -107,4 +111,15 @@ input[type='password'] ~ .password-visibility-toggle .eye-open {
 input[type='password'] ~ .password-visibility-toggle .eye-closed,
 input[type='text'] ~ .password-visibility-toggle .eye-open {
   display: none;
+}
+
+/*Tablets and up*/
+@media only screen and (min-width: 600px) {
+  #registration-password {
+    width: 80%;
+  }
+
+  #login-password {
+    width: 80%;
+  }
 }

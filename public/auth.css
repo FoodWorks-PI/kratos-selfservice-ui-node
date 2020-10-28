@@ -49,4 +49,5 @@
 .auth .alternative-actions {
   display: flex;
   justify-content: center;
+  margin: 3px 0;
 }
