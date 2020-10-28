@@ -1,13 +1,13 @@
 <div class="content">
     {{> header}}
     <div class="container">
-        <h4>Recover your account</h4>
+        <h4>Recupera tu cuenta</h4>
 
         {{> messages messages=messages className="global"}}
 
         {{#if token}}
             <div id="recovery-token">
-                {{> form form=token submitLabel="Send recovery link"}}
+                {{> form form=token submitLabel="Enviar link de recuperación"}}
             </div>
         {{/if}}
     </div>

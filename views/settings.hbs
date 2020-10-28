@@ -1,17 +1,17 @@
 <div class="content">
     {{> header}}
     <div class="container">
-        <h2>Settings</h2>
+        <h2>Ajustes</h2>
 
         {{> messages messages=messages className="global"}}
 
         {{#if (eq state "success")}}
-            <p>Your changes have been saved!</p>
+            <p>Tus cambios han sido guardados</p>
         {{/if}}
 
         {{#if profile}}
             <div id="user-profile">
-                <h3>Profile</h3>
+                <h3>Perfil</h3>
                 {{> form submitLabel="Save" form=profile}}
             </div>
         {{/if}}
@@ -19,7 +19,7 @@
         {{#if password}}
             <hr />
             <div id="user-password">
-                <h3>Password</h3>
+                <h3>Contraseña</h3>
                 {{> form submitLabel="Save" form=password}}
             </div>
         {{/if}}
@@ -27,7 +27,7 @@
         {{#if oidc}}
             <hr />
             <div id="user-oidc">
-                <h3>Social Sign In</h3>
+                <h3>Registro Social</h3>
                 {{> form form=oidc}}
             </div>
         {{/if}}
