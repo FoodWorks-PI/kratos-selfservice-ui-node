@@ -41,6 +41,11 @@ export const getPosition = (field: FormField) =>
     ? translations[field.name as keyof Translations].position
     : Infinity;
 
+export const sortFormFields = (first: FormField, second: FormField) =>
+  getPosition(first) - getPosition(second)
+
+
+
 // This helper function translates the html input type to the corresponding partial name.
 export const toFormInputPartialName = (type: string) => {
   switch (type) {
